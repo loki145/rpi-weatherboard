@@ -96,7 +96,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def updateTemp(self, temp):
         print(temp)
-        self.Weather.setText("temperature:" + str(temp['temperature']) + " \u00B0C")
+        self.Weather.setText("temperature:" + str(f"{temp['temperature']:.2f}") + " \u00B0C")
 
 
 class GetBMEThread(QtCore.QThread):
@@ -116,7 +116,7 @@ class GetBMEThread(QtCore.QThread):
             print(ctemp)
             self.tempSignal.emit(ctemp)
             self._mutex.unlock()
-            QtCore.QThread.sleep(5 * 60)
+            QtCore.QThread.sleep(3)
             print('last')
 
 #             observation = self.owm.weather_at_place('New York,us')
