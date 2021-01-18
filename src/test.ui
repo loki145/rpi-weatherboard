@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>341</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 202, 202);</string>
+    </property>
+    <widget class="QLCDNumber" name="tempSensor">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>171</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>5</number>
+     </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::Flat</enum>
+     </property>
+     <property name="value" stdset="0">
+      <double>31.219999999999999</double>
+     </property>
+     <property name="intValue" stdset="0">
+      <number>31</number>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="humSensor">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>0</y>
+       <width>121</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>5</number>
+     </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::Flat</enum>
+     </property>
+     <property name="value" stdset="0">
+      <double>55.000000000000000</double>
+     </property>
+     <property name="intValue" stdset="0">
+      <number>55</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>30</y>
+       <width>41</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>341</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 202, 202);</string>
+    </property>
+    <widget class="QLCDNumber" name="tempOutside">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>171</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>5</number>
+     </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::Flat</enum>
+     </property>
+     <property name="value" stdset="0">
+      <double>31.000000000000000</double>
+     </property>
+     <property name="intValue" stdset="0">
+      <number>31</number>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="humOutside">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>0</y>
+       <width>121</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>5</number>
+     </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::Flat</enum>
+     </property>
+     <property name="value" stdset="0">
+      <double>68.000000000000000</double>
+     </property>
+     <property name="intValue" stdset="0">
+      <number>68</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>30</y>
+       <width>41</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>50</y>
+      <width>131</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(194, 71, 255);&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ui version=&quot;4.0&quot;&gt;
+ &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
+  &lt;widget class=&quot;QWidget&quot; name=&quot;widget&quot; native=&quot;true&quot;&gt;
+   &lt;property name=&quot;geometry&quot;&gt;
+    &lt;rect&gt;
+     &lt;x&gt;10&lt;/x&gt;
+     &lt;y&gt;50&lt;/y&gt;
+     &lt;width&gt;341&lt;/width&gt;
+     &lt;height&gt;131&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;styleSheet&quot;&gt;
+    &lt;string notr=&quot;true&quot;&gt;background-color: rgb(202, 202, 202);&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;widget class=&quot;Spacer&quot; name=&quot;verticalSpacer&quot;&gt;
+    &lt;property name=&quot;geometry&quot;&gt;
+     &lt;rect&gt;
+      &lt;x&gt;160&lt;/x&gt;
+      &lt;y&gt;2&lt;/y&gt;
+      &lt;width&gt;23&lt;/width&gt;
+      &lt;height&gt;131&lt;/height&gt;
+     &lt;/rect&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;orientation&quot;&gt;
+     &lt;enum&gt;Qt::Vertical&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;sizeType&quot;&gt;
+     &lt;enum&gt;QSizePolicy::Fixed&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;sizeHint&quot; stdset=&quot;0&quot;&gt;
+     &lt;size&gt;
+      &lt;width&gt;20&lt;/width&gt;
+      &lt;height&gt;128&lt;/height&gt;
+     &lt;/size&gt;
+    &lt;/property&gt;
+   &lt;/widget&gt;
+   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber&quot;&gt;
+    &lt;property name=&quot;geometry&quot;&gt;
+     &lt;rect&gt;
+      &lt;x&gt;0&lt;/x&gt;
+      &lt;y&gt;0&lt;/y&gt;
+      &lt;width&gt;171&lt;/width&gt;
+      &lt;height&gt;131&lt;/height&gt;
+     &lt;/rect&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;layoutDirection&quot;&gt;
+     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
+     &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;digitCount&quot;&gt;
+     &lt;number&gt;5&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;segmentStyle&quot;&gt;
+     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
+     &lt;double&gt;31.219999999999999&lt;/double&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
+     &lt;number&gt;31&lt;/number&gt;
+    &lt;/property&gt;
+   &lt;/widget&gt;
+   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber_2&quot;&gt;
+    &lt;property name=&quot;geometry&quot;&gt;
+     &lt;rect&gt;
+      &lt;x&gt;170&lt;/x&gt;
+      &lt;y&gt;0&lt;/y&gt;
+      &lt;width&gt;171&lt;/width&gt;
+      &lt;height&gt;131&lt;/height&gt;
+     &lt;/rect&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;layoutDirection&quot;&gt;
+     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
+     &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;digitCount&quot;&gt;
+     &lt;number&gt;5&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;segmentStyle&quot;&gt;
+     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
+     &lt;double&gt;31.219999999999999&lt;/double&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
+     &lt;number&gt;31&lt;/number&gt;
+    &lt;/property&gt;
+   &lt;/widget&gt;
+  &lt;/widget&gt;
+ &lt;/widget&gt;
+ &lt;resources/&gt;
+&lt;/ui&gt;
+</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>190</y>
+      <width>131</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(194, 71, 255);&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ui version=&quot;4.0&quot;&gt;
+ &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
+  &lt;widget class=&quot;QWidget&quot; name=&quot;widget&quot; native=&quot;true&quot;&gt;
+   &lt;property name=&quot;geometry&quot;&gt;
+    &lt;rect&gt;
+     &lt;x&gt;10&lt;/x&gt;
+     &lt;y&gt;50&lt;/y&gt;
+     &lt;width&gt;341&lt;/width&gt;
+     &lt;height&gt;131&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;styleSheet&quot;&gt;
+    &lt;string notr=&quot;true&quot;&gt;background-color: rgb(202, 202, 202);&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;widget class=&quot;Spacer&quot; name=&quot;verticalSpacer&quot;&gt;
+    &lt;property name=&quot;geometry&quot;&gt;
+     &lt;rect&gt;
+      &lt;x&gt;160&lt;/x&gt;
+      &lt;y&gt;2&lt;/y&gt;
+      &lt;width&gt;23&lt;/width&gt;
+      &lt;height&gt;131&lt;/height&gt;
+     &lt;/rect&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;orientation&quot;&gt;
+     &lt;enum&gt;Qt::Vertical&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;sizeType&quot;&gt;
+     &lt;enum&gt;QSizePolicy::Fixed&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;sizeHint&quot; stdset=&quot;0&quot;&gt;
+     &lt;size&gt;
+      &lt;width&gt;20&lt;/width&gt;
+      &lt;height&gt;128&lt;/height&gt;
+     &lt;/size&gt;
+    &lt;/property&gt;
+   &lt;/widget&gt;
+   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber&quot;&gt;
+    &lt;property name=&quot;geometry&quot;&gt;
+     &lt;rect&gt;
+      &lt;x&gt;0&lt;/x&gt;
+      &lt;y&gt;0&lt;/y&gt;
+      &lt;width&gt;171&lt;/width&gt;
+      &lt;height&gt;131&lt;/height&gt;
+     &lt;/rect&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;layoutDirection&quot;&gt;
+     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
+     &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;digitCount&quot;&gt;
+     &lt;number&gt;5&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;segmentStyle&quot;&gt;
+     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
+     &lt;double&gt;31.219999999999999&lt;/double&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
+     &lt;number&gt;31&lt;/number&gt;
+    &lt;/property&gt;
+   &lt;/widget&gt;
+   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber_2&quot;&gt;
+    &lt;property name=&quot;geometry&quot;&gt;
+     &lt;rect&gt;
+      &lt;x&gt;170&lt;/x&gt;
+      &lt;y&gt;0&lt;/y&gt;
+      &lt;width&gt;171&lt;/width&gt;
+      &lt;height&gt;131&lt;/height&gt;
+     &lt;/rect&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;layoutDirection&quot;&gt;
+     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
+     &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;digitCount&quot;&gt;
+     &lt;number&gt;5&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;segmentStyle&quot;&gt;
+     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
+     &lt;double&gt;31.219999999999999&lt;/double&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
+     &lt;number&gt;31&lt;/number&gt;
+    &lt;/property&gt;
+   &lt;/widget&gt;
+  &lt;/widget&gt;
+ &lt;/widget&gt;
+ &lt;resources/&gt;
+&lt;/ui&gt;
+</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
