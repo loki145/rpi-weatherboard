@@ -5,10 +5,12 @@ try:
     from bme280_rpi.bme280_rpi import Sensor
 except:
     pass
-import sys
+import sys, requests, json, os
 
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType("test.ui")
+API_KEY = os.environ.get('OW_KEY')
+openWeatherURL = f'http://api.openweathermap.org/data/2.5/weather?q=Krakow&appid={API_KEY}&units=metric'
 
 def read_sensor():
     try:
@@ -66,8 +68,9 @@ class MyApp(QMainWindow):
             self.ui.tempSensor.display(self.tempSensor)
             self.ui.humSensor.display(self.humSensor)
 
-        def done2(press):
-            self.press = press
+        def done2(temp, humi):
+            self.tempOutside = temp
+            self.humOutside = humi
             self.ui.tempOutside.display(self.tempOutside)
             self.ui.humOutside.display(self.humOutside)
 
@@ -130,7 +133,22 @@ class outsideThread(QThread):
     def run(self):
         temp = '00.00'
         humi = '00.00'
-        self.MySignal2.emit(temp, humi)
+        while True:
+
+            weather = requests.get(openWeatherURL)
+            print(weather.status_code)
+            print(openWeatherURL)
+            print(weather.text)
+            if (weather.status_code == 200) and ('weather' in weather.json()):
+                print('code is fine')
+                try:
+                    temp = str(weather.json()['main']['temp'])
+                    humi = str(weather.json()['main']['humidity'])
+                except Exception as e:
+                    print(f"OopenWeather error is {e}")
+                print(f"Outside emit is {temp} and {humi}")
+                self.MySignal2.emit(temp, humi)
+            QThread.sleep(600)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
