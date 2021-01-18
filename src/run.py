@@ -17,7 +17,7 @@ def read_sensor():
         return data
     except:
         print('Exception connecting to BME')
-        error = 'Cannot connect to module'
+        error = '00.00'
         reply = {'timestamp': error, 'temperature': error, 'pressure': error, 'humidity': error}
         print(reply)
         return reply
@@ -41,9 +41,10 @@ class MyApp(QMainWindow):
             try:
                 self.MyThread1.start()
                 self.MyTimer1.start(10)
-            except:
+            except Exception as e:
                 self.tempSensor = '00.00'
                 self.humSensor = '00.00'
+                print(e)
                 self.ui.tempSensor.display(self.tempSensor)
                 self.ui.humSensor.display(self.humSensor)
 
@@ -51,15 +52,17 @@ class MyApp(QMainWindow):
             try:
                 self.MyThread2.start()
                 self.MyTimer2.start(10)
-            except:
+            except Exception as e:
                 self.tempOutside = '00.00'
                 self.humOutside = '00.00'
+                print(e)
                 self.ui.tempOutside.display(self.tempOutside)
                 self.ui.humOutside.display(self.humOutside)
 
         def done1(temp, humi):
-            self.temp = temp
-            self.humi = humi
+            self.tempSensor = temp
+            self.humSensor = humi
+            print(f"t {temp} H {humi} self: {self.tempSensor} {self.humSensor}")
             self.ui.tempSensor.display(self.tempSensor)
             self.ui.humSensor.display(self.humSensor)
 
@@ -69,6 +72,7 @@ class MyApp(QMainWindow):
             self.ui.humOutside.display(self.humOutside)
 
         self.MyThread1 = sensorThread()
+        # self.MyThread1.connect(done1)
         self.MyThread1.MySignal1.connect(done1)
         self.MyThread2 = outsideThread()
         self.MyThread2.MySignal2.connect(done2)
@@ -97,14 +101,17 @@ class sensorThread(QThread):
         self.wait()
 
     def run(self):
-        temp = '00.00'
-        humi = '00.00'
         while True:
             print('here')
             data = read_sensor()
             print(data)
-            temp = str(round(data['temperature'], 2))
-            humi = str(round(data['humidity'], 2))
+            try:
+                temp = str(round(data['temperature'], 2))
+                humi = str(round(data['humidity'], 2))
+            except Exception as e:
+                print(e)
+                temp = '00.00'
+                humi = '00.00'
             print(temp)
             print(humi)
             self.MySignal1.emit(temp, humi)
@@ -123,29 +130,6 @@ class outsideThread(QThread):
     def run(self):
         temp = '00.00'
         humi = '00.00'
-        # try:
-        #     process = os.popen('rtl_433 -f 868250000 -g 42 -p 37 -q -R 8 -T 65')
-        #     str = process.read()
-        #     process.close()
-        #
-        #     if str:
-        #         str = str.strip()
-        #         str = str.replace('\t', '')
-        #         str = str.replace('\n', ' ')
-        #         data = str.split(' ')
-        #
-        #         if data[6] == 'Temperature:' and data[15] == 'Humidity:':
-        #             temp = data[7]
-        #             humi = data[16]
-        #         elif data[6] == 'Humidity:' and data[15] == 'Temperature:':
-        #             temp = data[16]
-        #             humi = data[7]
-        #     elif not str:
-        #         temp = '--.-'
-        #         humi = '--.-'
-        # except:
-        #     temp = '--.-'
-        #     humi = '--.-'
         self.MySignal2.emit(temp, humi)
 
 if __name__ == "__main__":
