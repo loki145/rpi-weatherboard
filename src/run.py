@@ -103,9 +103,10 @@ class sensorThread(QThread):
             print('here')
             data = read_sensor()
             print(data)
-            ctemp = data
-            print(ctemp)
-            print('last')
+            temp = data['temperature']
+            humi = data['humidity']
+            print(temp)
+            print(humi)
             self.MySignal1.emit(temp, humi)
             QThread.sleep(5)
 
