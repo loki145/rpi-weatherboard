@@ -40,7 +40,7 @@ class MyApp(QMainWindow):
         def timeout1():
             try:
                 self.MyThread1.start()
-                self.MyTimer1.start(90000)
+                self.MyTimer1.start(10)
             except:
                 self.tempSensor = '00.00'
                 self.humSensor = '00.00'
@@ -50,7 +50,7 @@ class MyApp(QMainWindow):
         def timeout2():
             try:
                 self.MyThread2.start()
-                self.MyTimer2.start(600000)
+                self.MyTimer2.start(10)
             except:
                 self.tempOutside = '00.00'
                 self.humOutside = '00.00'
@@ -73,12 +73,12 @@ class MyApp(QMainWindow):
         self.MyThread2 = outsideThread()
         self.MyThread2.MySignal2.connect(done2)
 
-        # self.MyTimer1 = QTimer()
-        # self.MyTimer1.timeout.connect(timeout1)
-        # self.MyTimer1.start(100)
-        # self.MyTimer2 = QTimer()
-        # self.MyTimer2.timeout.connect(timeout2)
-        # self.MyTimer2.start(100)
+        self.MyTimer1 = QTimer()
+        self.MyTimer1.timeout.connect(timeout1)
+        self.MyTimer1.start(10)
+        self.MyTimer2 = QTimer()
+        self.MyTimer2.timeout.connect(timeout2)
+        self.MyTimer2.start(10)
 
     def __del__(self):
         self.MyTimer1.stop()
