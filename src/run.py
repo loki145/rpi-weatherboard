@@ -103,8 +103,8 @@ class sensorThread(QThread):
             print('here')
             data = read_sensor()
             print(data)
-            temp = data['temperature']
-            humi = data['humidity']
+            temp = str(round(data['temperature'], 2))
+            humi = str(round(data['humidity'], 2))
             print(temp)
             print(humi)
             self.MySignal1.emit(temp, humi)
