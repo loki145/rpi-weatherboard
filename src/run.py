@@ -73,12 +73,12 @@ class MyApp(QMainWindow):
         self.MyThread2 = outsideThread()
         self.MyThread2.MySignal2.connect(done2)
 
-        self.MyTimer1 = QTimer()
-        self.MyTimer1.timeout.connect(timeout1)
-        self.MyTimer1.start(100)
-        self.MyTimer2 = QTimer()
-        self.MyTimer2.timeout.connect(timeout2)
-        self.MyTimer2.start(100)
+        # self.MyTimer1 = QTimer()
+        # self.MyTimer1.timeout.connect(timeout1)
+        # self.MyTimer1.start(100)
+        # self.MyTimer2 = QTimer()
+        # self.MyTimer2.timeout.connect(timeout2)
+        # self.MyTimer2.start(100)
 
     def __del__(self):
         self.MyTimer1.stop()
