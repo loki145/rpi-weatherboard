@@ -45,7 +45,7 @@ class MyApp(QMainWindow):
         self.humOutside = '00.00'
         self.wind_speed = '00.00'
         self.air_value = '0'
-        self.air_icon = 'icons/unknown.png'
+        self.air_icon = 'icons/air.png'
         self.icon = 'icons/unknown.png'
         self.windIcon = 'icons/wind.png'
         self.pixmap = QPixmap(self.icon)
@@ -114,7 +114,7 @@ class MyApp(QMainWindow):
                 self.MyTimer3.start(10)
             except Exception as e:
                 self.air_value = '0'
-                self.air_icon = 'icons/unknown.png'
+                self.air_icon = 'icons/air.png'
                 print(e)
                 self.pixmapAIR = QPixmap(self.air_icon)
                 self.ui.air_icon.setPixmap(self.pixmapAIR)
@@ -146,9 +146,9 @@ class MyApp(QMainWindow):
             self.ui.F_D1_I.setPixmap(self.pixmapD1)
             self.ui.F_D2_I.setPixmap(self.pixmapD2)
             self.ui.F_D3_I.setPixmap(self.pixmapD3)
-            self.ui.F_D1_T.setText(f"{self.F_D1['t_day']}\{self.F_D1['t_night']}")
-            self.ui.F_D2_T.setText(f"{self.F_D2['t_day']}\{self.F_D2['t_night']}")
-            self.ui.F_D3_T.setText(f"{self.F_D3['t_day']}\{self.F_D3['t_night']}")
+            self.ui.F_D1_T.setText(f"{self.F_D1['t_day']}\n{self.F_D1['t_night']}")
+            self.ui.F_D2_T.setText(f"{self.F_D2['t_day']}\n{self.F_D2['t_night']}")
+            self.ui.F_D3_T.setText(f"{self.F_D3['t_day']}\n{self.F_D3['t_night']}")
             print(self.F_D1)
             print(self.F_D2)
             print(self.F_D3)
@@ -156,11 +156,25 @@ class MyApp(QMainWindow):
         def done3(air_value):
             print("in done3")
             self.air_value = air_value
-            self.air_icon = 'icons/unknown.png' #STUB
+            self.air_icon = 'icons/air.png'
             print(f"got air quality {self.air_value} and {self.air_icon}")
             self.pixmapAIR = QPixmap(self.air_icon)
             self.ui.air_icon.setPixmap(self.pixmapAIR)
             self.ui.air_value.setText(self.air_value)
+            color = ''
+            if 0 <= int(self.air_value) <= 50:
+                color = 'lightgreen'
+            elif 51 <= int(self.air_value) <= 100:
+                color = 'yellow'
+            elif 101 <= int(self.air_value) <= 150:
+                color = 'orange'
+            elif 151 <= int(self.air_value) <= 200:
+                color = 'red'
+            elif 201 <= int(self.air_value) <= 300:
+                color = 'purple'
+            else:
+                color = 'black'
+            self.ui.air_icon.setStyleSheet(f"background-color: {color}")
 
         self.MyThread1 = sensorThread()
         self.MyThread1.MySignal1.connect(done1)
@@ -248,12 +262,12 @@ class outsideThread(QThread):
                     icon = 'icons/' + str(j_weather['current']['weather'][0]['icon']) + '.png'
                     if ('daily' in j_weather) and (len(j_weather['daily']) >= 3):
                         print(f'found dayily forecast {j_weather["daily"]}')
-                        t1_day = "{:.1f}".format(j_weather["daily"][0]["temp"]["day"])
-                        t1_night = "{:.1f}".format(j_weather["daily"][0]["temp"]["night"])
-                        t2_day = "{:.1f}".format(j_weather["daily"][1]["temp"]["day"])
-                        t2_night = "{:.1f}".format(j_weather["daily"][1]["temp"]["night"])
-                        t3_day = "{:.1f}".format(j_weather["daily"][2]["temp"]["day"])
-                        t3_night = "{:.1f}".format(j_weather["daily"][3]["temp"]["night"])
+                        t1_day = "{:.0f}".format(j_weather["daily"][0]["temp"]["day"])
+                        t1_night = "{:.0f}".format(j_weather["daily"][0]["temp"]["night"])
+                        t2_day = "{:.0f}".format(j_weather["daily"][1]["temp"]["day"])
+                        t2_night = "{:.0f}".format(j_weather["daily"][1]["temp"]["night"])
+                        t3_day = "{:.0f}".format(j_weather["daily"][2]["temp"]["day"])
+                        t3_night = "{:.0f}".format(j_weather["daily"][3]["temp"]["night"])
                         F_D1 = {"t_day": t1_day, "t_night": t1_night, "icon": f'icons/' + j_weather["daily"][0]["weather"][0]["icon"] + '.png'}
                         F_D2 = {"t_day": t2_day, "t_night": t2_night, "icon": f'icons/' + j_weather["daily"][1]["weather"][0]["icon"] + '.png'}
                         F_D3 = {"t_day": t3_day, "t_night": t3_night, "icon": f'icons/' + j_weather["daily"][2]["weather"][0]["icon"] + '.png'}

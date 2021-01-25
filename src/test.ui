@@ -880,7 +880,7 @@
    <widget class="QLabel" name="F_D1_T">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>190</x>
       <y>260</y>
       <width>111</width>
       <height>81</height>
@@ -889,7 +889,7 @@
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>14</pointsize>
+      <pointsize>18</pointsize>
       <weight>50</weight>
       <bold>false</bold>
      </font>
@@ -907,7 +907,7 @@
    <widget class="QLabel" name="F_D2_T">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>260</y>
       <width>111</width>
       <height>81</height>
@@ -916,7 +916,7 @@
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>14</pointsize>
+      <pointsize>18</pointsize>
       <weight>50</weight>
       <bold>false</bold>
      </font>
@@ -934,7 +934,7 @@
    <widget class="QLabel" name="F_D3_T">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>390</x>
       <y>260</y>
       <width>101</width>
       <height>81</height>
@@ -943,7 +943,7 @@
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>14</pointsize>
+      <pointsize>18</pointsize>
       <weight>50</weight>
       <bold>false</bold>
      </font>
