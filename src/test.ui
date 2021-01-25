@@ -14,13 +14,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="TempHomeWidget" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>341</width>
-      <height>131</height>
+      <width>170</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -48,73 +48,20 @@
       <enum>QLCDNumber::Flat</enum>
      </property>
      <property name="value" stdset="0">
-      <double>31.219999999999999</double>
+      <double>31.000000000000000</double>
      </property>
      <property name="intValue" stdset="0">
       <number>31</number>
      </property>
     </widget>
-    <widget class="QLCDNumber" name="humSensor">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>0</y>
-       <width>121</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="smallDecimalPoint">
-      <bool>false</bool>
-     </property>
-     <property name="digitCount">
-      <number>5</number>
-     </property>
-     <property name="segmentStyle">
-      <enum>QLCDNumber::Flat</enum>
-     </property>
-     <property name="value" stdset="0">
-      <double>55.000000000000000</double>
-     </property>
-     <property name="intValue" stdset="0">
-      <number>55</number>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>30</y>
-       <width>41</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;</string>
-     </property>
-     <property name="lineWidth">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>%</string>
-     </property>
-     <property name="scaledContents">
-      <bool>false</bool>
-     </property>
-    </widget>
    </widget>
-   <widget class="QWidget" name="widget_2" native="true">
+   <widget class="QWidget" name="TempAPIWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>341</width>
-      <height>131</height>
+      <x>620</x>
+      <y>50</y>
+      <width>170</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -148,10 +95,504 @@
       <number>31</number>
      </property>
     </widget>
+   </widget>
+   <widget class="QWidget" name="HumHomeWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>170</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Light">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Midlight">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>228</red>
+          <green>228</green>
+          <blue>228</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Dark">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>101</red>
+          <green>101</green>
+          <blue>101</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Mid">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>135</red>
+          <green>135</green>
+          <blue>135</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="BrightText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ButtonText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Shadow">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="AlternateBase">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>228</red>
+          <green>228</green>
+          <blue>228</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ToolTipBase">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>220</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ToolTipText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Light">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Midlight">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>228</red>
+          <green>228</green>
+          <blue>228</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Dark">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>101</red>
+          <green>101</green>
+          <blue>101</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Mid">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>135</red>
+          <green>135</green>
+          <blue>135</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="BrightText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ButtonText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Shadow">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="AlternateBase">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>228</red>
+          <green>228</green>
+          <blue>228</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ToolTipBase">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>220</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ToolTipText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>101</red>
+          <green>101</green>
+          <blue>101</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Light">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Midlight">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>228</red>
+          <green>228</green>
+          <blue>228</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Dark">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>101</red>
+          <green>101</green>
+          <blue>101</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Mid">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>135</red>
+          <green>135</green>
+          <blue>135</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>101</red>
+          <green>101</green>
+          <blue>101</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="BrightText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ButtonText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>101</red>
+          <green>101</green>
+          <blue>101</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Shadow">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="AlternateBase">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>202</red>
+          <green>202</green>
+          <blue>202</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ToolTipBase">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>220</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="ToolTipText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 202, 202);</string>
+    </property>
+    <widget class="QLCDNumber" name="humSensor">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>121</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>5</number>
+     </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::Flat</enum>
+     </property>
+     <property name="value" stdset="0">
+      <double>55.000000000000000</double>
+     </property>
+     <property name="intValue" stdset="0">
+      <number>55</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>30</y>
+       <width>41</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="HumAPIWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>220</y>
+      <width>170</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 202, 202);</string>
+    </property>
     <widget class="QLCDNumber" name="humOutside">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>0</x>
        <y>0</y>
        <width>121</width>
        <height>131</height>
@@ -179,7 +620,7 @@
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>300</x>
+       <x>130</x>
        <y>30</y>
        <width>41</width>
        <height>61</height>
@@ -199,230 +640,413 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_3" native="true">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>50</y>
-      <width>131</width>
-      <height>131</height>
+      <x>60</x>
+      <y>10</y>
+      <width>55</width>
+      <height>16</height>
      </rect>
     </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(194, 71, 255);&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;ui version=&quot;4.0&quot;&gt;
- &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
-  &lt;widget class=&quot;QWidget&quot; name=&quot;widget&quot; native=&quot;true&quot;&gt;
-   &lt;property name=&quot;geometry&quot;&gt;
-    &lt;rect&gt;
-     &lt;x&gt;10&lt;/x&gt;
-     &lt;y&gt;50&lt;/y&gt;
-     &lt;width&gt;341&lt;/width&gt;
-     &lt;height&gt;131&lt;/height&gt;
-    &lt;/rect&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;styleSheet&quot;&gt;
-    &lt;string notr=&quot;true&quot;&gt;background-color: rgb(202, 202, 202);&lt;/string&gt;
-   &lt;/property&gt;
-   &lt;widget class=&quot;Spacer&quot; name=&quot;verticalSpacer&quot;&gt;
-    &lt;property name=&quot;geometry&quot;&gt;
-     &lt;rect&gt;
-      &lt;x&gt;160&lt;/x&gt;
-      &lt;y&gt;2&lt;/y&gt;
-      &lt;width&gt;23&lt;/width&gt;
-      &lt;height&gt;131&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;orientation&quot;&gt;
-     &lt;enum&gt;Qt::Vertical&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;sizeType&quot;&gt;
-     &lt;enum&gt;QSizePolicy::Fixed&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;sizeHint&quot; stdset=&quot;0&quot;&gt;
-     &lt;size&gt;
-      &lt;width&gt;20&lt;/width&gt;
-      &lt;height&gt;128&lt;/height&gt;
-     &lt;/size&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber&quot;&gt;
-    &lt;property name=&quot;geometry&quot;&gt;
-     &lt;rect&gt;
-      &lt;x&gt;0&lt;/x&gt;
-      &lt;y&gt;0&lt;/y&gt;
-      &lt;width&gt;171&lt;/width&gt;
-      &lt;height&gt;131&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;layoutDirection&quot;&gt;
-     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
-     &lt;bool&gt;false&lt;/bool&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;digitCount&quot;&gt;
-     &lt;number&gt;5&lt;/number&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;segmentStyle&quot;&gt;
-     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
-     &lt;double&gt;31.219999999999999&lt;/double&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
-     &lt;number&gt;31&lt;/number&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber_2&quot;&gt;
-    &lt;property name=&quot;geometry&quot;&gt;
-     &lt;rect&gt;
-      &lt;x&gt;170&lt;/x&gt;
-      &lt;y&gt;0&lt;/y&gt;
-      &lt;width&gt;171&lt;/width&gt;
-      &lt;height&gt;131&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;layoutDirection&quot;&gt;
-     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
-     &lt;bool&gt;false&lt;/bool&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;digitCount&quot;&gt;
-     &lt;number&gt;5&lt;/number&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;segmentStyle&quot;&gt;
-     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
-     &lt;double&gt;31.219999999999999&lt;/double&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
-     &lt;number&gt;31&lt;/number&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-  &lt;/widget&gt;
- &lt;/widget&gt;
- &lt;resources/&gt;
-&lt;/ui&gt;
-</string>
+    <property name="text">
+     <string>Home</string>
     </property>
    </widget>
-   <widget class="QWidget" name="widget_4" native="true">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>190</y>
-      <width>131</width>
-      <height>131</height>
+      <x>10</x>
+      <y>30</y>
+      <width>161</width>
+      <height>16</height>
      </rect>
     </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(194, 71, 255);&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;ui version=&quot;4.0&quot;&gt;
- &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
-  &lt;widget class=&quot;QWidget&quot; name=&quot;widget&quot; native=&quot;true&quot;&gt;
-   &lt;property name=&quot;geometry&quot;&gt;
-    &lt;rect&gt;
-     &lt;x&gt;10&lt;/x&gt;
-     &lt;y&gt;50&lt;/y&gt;
-     &lt;width&gt;341&lt;/width&gt;
-     &lt;height&gt;131&lt;/height&gt;
-    &lt;/rect&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;styleSheet&quot;&gt;
-    &lt;string notr=&quot;true&quot;&gt;background-color: rgb(202, 202, 202);&lt;/string&gt;
-   &lt;/property&gt;
-   &lt;widget class=&quot;Spacer&quot; name=&quot;verticalSpacer&quot;&gt;
-    &lt;property name=&quot;geometry&quot;&gt;
-     &lt;rect&gt;
-      &lt;x&gt;160&lt;/x&gt;
-      &lt;y&gt;2&lt;/y&gt;
-      &lt;width&gt;23&lt;/width&gt;
-      &lt;height&gt;131&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;orientation&quot;&gt;
-     &lt;enum&gt;Qt::Vertical&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;sizeType&quot;&gt;
-     &lt;enum&gt;QSizePolicy::Fixed&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;sizeHint&quot; stdset=&quot;0&quot;&gt;
-     &lt;size&gt;
-      &lt;width&gt;20&lt;/width&gt;
-      &lt;height&gt;128&lt;/height&gt;
-     &lt;/size&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber&quot;&gt;
-    &lt;property name=&quot;geometry&quot;&gt;
-     &lt;rect&gt;
-      &lt;x&gt;0&lt;/x&gt;
-      &lt;y&gt;0&lt;/y&gt;
-      &lt;width&gt;171&lt;/width&gt;
-      &lt;height&gt;131&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;layoutDirection&quot;&gt;
-     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
-     &lt;bool&gt;false&lt;/bool&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;digitCount&quot;&gt;
-     &lt;number&gt;5&lt;/number&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;segmentStyle&quot;&gt;
-     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
-     &lt;double&gt;31.219999999999999&lt;/double&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
-     &lt;number&gt;31&lt;/number&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-   &lt;widget class=&quot;QLCDNumber&quot; name=&quot;lcdNumber_2&quot;&gt;
-    &lt;property name=&quot;geometry&quot;&gt;
-     &lt;rect&gt;
-      &lt;x&gt;170&lt;/x&gt;
-      &lt;y&gt;0&lt;/y&gt;
-      &lt;width&gt;171&lt;/width&gt;
-      &lt;height&gt;131&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;layoutDirection&quot;&gt;
-     &lt;enum&gt;Qt::LeftToRight&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;smallDecimalPoint&quot;&gt;
-     &lt;bool&gt;false&lt;/bool&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;digitCount&quot;&gt;
-     &lt;number&gt;5&lt;/number&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;segmentStyle&quot;&gt;
-     &lt;enum&gt;QLCDNumber::Flat&lt;/enum&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;value&quot; stdset=&quot;0&quot;&gt;
-     &lt;double&gt;31.219999999999999&lt;/double&gt;
-    &lt;/property&gt;
-    &lt;property name=&quot;intValue&quot; stdset=&quot;0&quot;&gt;
-     &lt;number&gt;31&lt;/number&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-  &lt;/widget&gt;
- &lt;/widget&gt;
- &lt;resources/&gt;
-&lt;/ui&gt;
-</string>
+    <property name="text">
+     <string>Temperature</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>10</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Outside</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>30</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Temperature</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Humidity</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>190</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Humidity</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>0</y>
+      <width>20</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>-10</y>
+      <width>20</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>-10</y>
+      <width>20</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="WeatherImage">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>40</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="WindIcon">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>160</y>
+      <width>80</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="WindSpeed">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>250</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>12.4</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>100</y>
+      <width>321</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="F_D1_T">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>260</y>
+      <width>111</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>12.4</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="F_D2_T">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>260</y>
+      <width>111</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>12.4</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="F_D3_T">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>260</y>
+      <width>101</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>12.4</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="F_D1_I">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>150</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="F_D2_I">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>150</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="F_D3_I">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>150</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="air_value">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="air_icon">
+    <property name="geometry">
+     <rect>
+      <x>359</x>
+      <y>10</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
