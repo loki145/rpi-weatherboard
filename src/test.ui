@@ -849,9 +849,9 @@
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>20</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="layoutDirection">
@@ -880,18 +880,18 @@
    <widget class="QLabel" name="F_D1_T">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>260</y>
+      <x>150</x>
+      <y>230</y>
       <width>111</width>
-      <height>81</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>18</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="layoutDirection">
@@ -900,25 +900,28 @@
     <property name="text">
      <string>12.4</string>
     </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="F_D2_T">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>260</y>
+      <x>250</x>
+      <y>230</y>
       <width>111</width>
-      <height>81</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>18</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="layoutDirection">
@@ -928,24 +931,24 @@
      <string>12.4</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="F_D3_T">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>260</y>
-      <width>101</width>
-      <height>81</height>
+      <x>350</x>
+      <y>230</y>
+      <width>111</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>18</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="layoutDirection">
@@ -955,7 +958,7 @@
      <string>12.4</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="F_D1_I">
@@ -1009,16 +1012,16 @@
    <widget class="QLabel" name="air_value">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>200</x>
       <y>10</y>
-      <width>91</width>
+      <width>121</width>
       <height>91</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>24</pointsize>
+      <pointsize>28</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
