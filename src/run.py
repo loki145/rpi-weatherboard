@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
