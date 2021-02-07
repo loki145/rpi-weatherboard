@@ -1,8 +1,8 @@
 class Sensor:
     def __init__(self):
         self.main_path = "/sys/bus/iio/devices/iio:device0/"
-        self.temp_file = self.main_path + "in_humidityrelative_input"
-        self.hum_file = self.main_path + "in_temp_input"
+        self.hum_file = self.main_path + "in_humidityrelative_input"
+        self.temp_file = self.main_path + "in_temp_input"
         self.temp_val = "00.00"
         self.hum_val = "00.00"
 
