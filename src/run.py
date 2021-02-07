@@ -10,7 +10,7 @@ except:
 import sys, requests, json, os
 
 
-Ui_MainWindow, QtBaseClass = uic.loadUiType("test.ui")
+Ui_MainWindow, QtBaseClass = uic.loadUiType("/home/pi/rpi-weatherboard/src/test.ui")
 API_KEY = os.environ.get('OW_KEY')
 AIR_KEY = os.environ.get('AQICN_KEY')
 #General URL
@@ -46,13 +46,13 @@ class MyApp(QMainWindow):
         self.humOutside = '00.00'
         self.wind_speed = '00.00'
         self.air_value = '0'
-        self.air_icon = 'icons/air.png'
-        self.icon = 'icons/unknown.png'
-        self.windIcon = 'icons/wind.png'
+        self.air_icon = '/home/pi/rpi-weatherboard/src/icons/air.png'
+        self.icon = '/home/pi/rpi-weatherboard/src/icons/unknown.png'
+        self.windIcon = '/home/pi/rpi-weatherboard/src/icons/wind.png'
         self.pixmap = QPixmap(self.icon)
-        self.F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-        self.F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-        self.F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
+        self.F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+        self.F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+        self.F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
         self.pixmapD1 = QPixmap(self.F_D1["icon"])
         self.pixmapD2 = QPixmap(self.F_D2["icon"])
         self.pixmapD3 = QPixmap(self.F_D3["icon"])
@@ -83,11 +83,11 @@ class MyApp(QMainWindow):
             except Exception as e:
                 self.tempSensor = '00.00'
                 self.humSensor = '00.00'
-                self.icon = 'icons/unknown.png'
+                self.icon = '/home/pi/rpi-weatherboard/src/icons/unknown.png'
                 self.wind_speed = '00.00'
-                self.F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-                self.F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-                self.F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
+                self.F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+                self.F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+                self.F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
                 print(e)
                 self.ui.tempSensor.display(self.tempSensor)
                 self.ui.humSensor.display(self.humSensor)
@@ -101,9 +101,9 @@ class MyApp(QMainWindow):
                 self.humOutside = '00.00'
                 self.icon = 'icons/unknown.png'
                 self.wind_speed = '00.00'
-                self.F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-                self.F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-                self.F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
+                self.F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+                self.F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+                self.F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
                 print(e)
                 self.ui.tempOutside.display(self.tempOutside)
                 self.ui.humOutside.display(self.humOutside)
@@ -115,7 +115,7 @@ class MyApp(QMainWindow):
                 self.MyTimer3.start(10)
             except Exception as e:
                 self.air_value = '0'
-                self.air_icon = 'icons/air.png'
+                self.air_icon = '/home/pi/rpi-weatherboard/src/icons/air.png'
                 print(e)
                 self.pixmapAIR = QPixmap(self.air_icon)
                 self.ui.air_icon.setPixmap(self.pixmapAIR)
@@ -157,7 +157,7 @@ class MyApp(QMainWindow):
         def done3(air_value):
             print("in done3")
             self.air_value = air_value
-            self.air_icon = 'icons/air.png'
+            self.air_icon = '/home/pi/rpi-weatherboard/src/icons/air.png'
             print(f"got air quality {self.air_value} and {self.air_icon}")
             self.pixmapAIR = QPixmap(self.air_icon)
             self.ui.air_icon.setPixmap(self.pixmapAIR)
@@ -241,12 +241,12 @@ class outsideThread(QThread):
     def run(self):
         temp = '00.00'
         humi = '00.00'
-        icon = 'icons/unknown.png'
+        icon = '/home/pi/rpi-weatherboard/src/icons/unknown.png'
         wind_speed = '0.0'
         wind_deg = 0
-        F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-        F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
-        F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "icons/unknown.png"}
+        F_D1 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+        F_D2 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
+        F_D3 = {"t_day": "00.00", "t_night": "00.00", "icon": "/home/pi/rpi-weatherboard/src/icons/unknown.png"}
         while True:
             weather = requests.get(openWeatherURL)
             j_weather = weather.json()
@@ -260,7 +260,7 @@ class outsideThread(QThread):
                     humi = str(j_weather['current']['humidity'])
                     wind_speed = str(j_weather['current']['wind_speed'])
                     wind_deg = str(j_weather['current']['wind_speed'])
-                    icon = 'icons/' + str(j_weather['current']['weather'][0]['icon']) + '.png'
+                    icon = '/home/pi/rpi-weatherboard/src/icons/' + str(j_weather['current']['weather'][0]['icon']) + '.png'
                     if ('daily' in j_weather) and (len(j_weather['daily']) >= 3):
                         print(f'found dayily forecast {j_weather["daily"]}')
                         t1_day = "{:.0f}".format(j_weather["daily"][0]["temp"]["day"])
@@ -269,9 +269,9 @@ class outsideThread(QThread):
                         t2_night = "{:.0f}".format(j_weather["daily"][1]["temp"]["night"])
                         t3_day = "{:.0f}".format(j_weather["daily"][2]["temp"]["day"])
                         t3_night = "{:.0f}".format(j_weather["daily"][3]["temp"]["night"])
-                        F_D1 = {"t_day": t1_day, "t_night": t1_night, "icon": f'icons/' + j_weather["daily"][0]["weather"][0]["icon"] + '.png'}
-                        F_D2 = {"t_day": t2_day, "t_night": t2_night, "icon": f'icons/' + j_weather["daily"][1]["weather"][0]["icon"] + '.png'}
-                        F_D3 = {"t_day": t3_day, "t_night": t3_night, "icon": f'icons/' + j_weather["daily"][2]["weather"][0]["icon"] + '.png'}
+                        F_D1 = {"t_day": t1_day, "t_night": t1_night, "icon": f'/home/pi/rpi-weatherboard/src/icons/' + j_weather["daily"][0]["weather"][0]["icon"] + '.png'}
+                        F_D2 = {"t_day": t2_day, "t_night": t2_night, "icon": f'/home/pi/rpi-weatherboard/src/icons/' + j_weather["daily"][1]["weather"][0]["icon"] + '.png'}
+                        F_D3 = {"t_day": t3_day, "t_night": t3_night, "icon": f'/home/pi/rpi-weatherboard/src/icons/' + j_weather["daily"][2]["weather"][0]["icon"] + '.png'}
                 except Exception as e:
                     print(f"OopenWeather error is {e}")
                 print(f"Outside emit is {temp} and {humi} and icon {icon} and wind {wind_speed} towards {wind_deg}")
