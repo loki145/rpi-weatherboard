@@ -3,8 +3,12 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal
+# try:
+#     from bme280_rpi.bme280_rpi import Sensor
+# except:
+#     pass
 try:
-    from bme280_rpi.bme280_rpi import Sensor
+    from bmeoverlay.bmeoverlay import Sensor
 except:
     pass
 import sys, requests, json, os
